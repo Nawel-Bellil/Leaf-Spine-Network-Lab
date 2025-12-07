@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  spine1:
+    image: frrouting/frr:v7.5.1
+    container_name: spine1
+    hostname: spine1
+    privileged: true
+    command: /sbin/init
+
+  spine2:
+    image: frrouting/frr:v7.5.1
+    container_name: spine2
+    hostname: spine2
+    privileged: true
+    command: /sbin/init
+
+  leaf1:
+    image: frrouting/frr:v7.5.1
+    container_name: leaf1
+    hostname: leaf1
+    privileged: true
+    command: /sbin/init
+
+  leaf2:
+    image: frrouting/frr:v7.5.1
+    container_name: leaf2
+    hostname: leaf2
+    privileged: true
+    command: /sbin/init
+
+  server1:
+    image: alpine:latest
+    container_name: server1
+    command: sleep infinity
+
+  server2:
+    image: alpine:latest
+    container_name: server2
+    command: sleep infinity
