@@ -1,0 +1,22 @@
+hostname leaf1
+password zebra
+enable password zebra
+ip forwarding
+router ospf 1
+  ospf router-id 10.1.0.1
+  network 10.11.0.0 0.0.0.255 area 0
+  network 10.12.0.0 0.0.0.255 area 0
+  network 10.20.0.0 0.0.0.255 area 0
+interface lo
+  ip address 10.1.0.1 255.255.255.255
+interface eth1
+  ip address 10.11.0.3 255.255.255.0
+  ip ospf cost 30
+interface eth2
+  ip address 10.12.0.3 255.255.255.0
+  ip ospf cost 30
+interface eth3
+  ip address 10.20.0.1 255.255.255.0
+  passive-interface
+line vty 0 4
+  password zebra

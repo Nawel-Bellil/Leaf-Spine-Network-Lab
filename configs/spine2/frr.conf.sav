@@ -1,0 +1,22 @@
+hostname spine2
+password zebra
+enable password zebra
+ip forwarding
+router ospf 1
+  ospf router-id 10.0.0.2
+  network 10.10.0.0 0.0.0.255 area 0
+  network 10.12.0.0 0.0.0.255 area 0
+  network 10.14.0.0 0.0.0.255 area 0
+interface lo
+  ip address 10.0.0.2 255.255.255.255
+interface eth1
+  ip address 10.10.0.2 255.255.255.0
+  ip ospf cost 100
+interface eth2
+  ip address 10.12.0.1 255.255.255.0
+  ip ospf cost 50
+interface eth3
+  ip address 10.14.0.1 255.255.255.0
+  ip ospf cost 50
+line vty 0 4
+  password zebra
