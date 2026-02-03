@@ -2,7 +2,7 @@
 
 Production-grade Docker network topology with OSPF routing.
 
-**Status**: ✓ Operational | **Tested**: December 2024 | **Course**: Advanced Networks
+**Status**: ✓ Operational |  **Course**: Advanced Networks
 
 ---
 
@@ -204,3 +204,4 @@ bash deploy.sh
 
 **Status**: ✓ OPERATIONAL  
 **All tests pass**: Convergence (28s), Latency (<1ms), Loss (0%)
+
